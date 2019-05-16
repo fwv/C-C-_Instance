@@ -32,9 +32,9 @@ void pointer_instance() {
     int* a1,* b1;
     a1 = &a;
     b1 = &b;
-    //swap(a,b);//it's very strange that this method don't need method declaration.why???
+    swap(a,b);//it's very strange that this method don't need method declaration.why???
     // swap3(a,b);
-    // printf("a= %d,b= %d\n",a,b);
+    printf("a= %d,b= %d\n",a,b);
     // swap1(a1,b1);
     // swap2(a1,b1);
     // printf("a= %d,b= %d\n",*a1,*b1);
