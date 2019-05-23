@@ -8,6 +8,9 @@ void quickSort(int*a, int left, int right);
 
 
 /**
+	Structure:left and right help each other
+	Pattern: classic flash game "ice and fires"
+
     6  2  7  1  8  2  4    6
     l                 h   base
 
