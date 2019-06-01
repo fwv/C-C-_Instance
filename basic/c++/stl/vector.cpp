@@ -36,7 +36,7 @@ void vector_instance() {
         // S.size();
         // S.clear();
         // S.insert(it+2, 1);   
-        // S.erase(it+2);s
+        // S.erase(it+2);
         // S.erase(it+1,it+2);
             
 
