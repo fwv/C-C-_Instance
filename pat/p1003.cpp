@@ -56,3 +56,7 @@ void addEdge(vector<city>* adj, int start, int end, int w) {
     c2.w = w;
     v.push_back(c2);
 }
+
+void dfs(city s) {
+        
+}
