@@ -30,7 +30,7 @@ void p1003() {
     scyNum = (int*)malloc(sizeof(int)*cityNUm);
     d = (int*)malloc(sizeof(int)*cityNUm);
     maxScyNum = (int*)malloc(sizeof(int)*cityNUm);
-    adj = (vector<city>*)malloc(sizeof(vector<city>*)*cityNUm);
+    adj = (vector<city>*)malloc(sizeof(vector<city>)*cityNUm);
     visited = (bool*)malloc(sizeof(bool)*cityNUm);
 
     for(int i = 0; i < cityNUm; i++) {
@@ -39,8 +39,9 @@ void p1003() {
             city c;         //邻接表添加头结点
             c.v = i;
             c.w = 0;
-            vector<city> v = adj[i];
+            vector<city> v;
             v.push_back(c);
+            adj[i] = v;
             visited[i] = false; //初始化访问数组
     }
 
@@ -135,5 +136,5 @@ void addEdge(vector<city>* adj, int start, int end, int w) {
     city c2;
     c2.v = start;
     c2.w = w;
-    v.push_back(c2);
+    v1.push_back(c2);
 }
