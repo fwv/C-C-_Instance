@@ -11,6 +11,8 @@ class city{
         //int s;//搜救队数量    
 };
 
+void addEdge(vector<city>* adj, int start, int end, int w);
+
 void p1003() {
     vector<city>* adj;
     int cityNUm;
@@ -37,7 +39,8 @@ void p1003() {
             city c;         //邻接表添加头结点
             c.v = i;
             c.w = 0;
-            adj[i].push_back(c);
+            vector<city> v = adj[i];
+            v.push_back(c);
             visited[i] = false; //初始化访问数组
     }
 
