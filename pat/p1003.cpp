@@ -43,7 +43,7 @@ void p1003() {
             v.push_back(c);
             adj[i] = v;
             visited[i] = false; //初始化访问数组
-    }
+    } 
 
     for(int i = 0; i < cityNUm; i++) {
         scanf("%d", &scyNum[i]);
@@ -69,6 +69,7 @@ void p1003() {
         }
         //更新邻节点距离
         vector<city> adjCitys = adj[newCity];
+        int size = adjCitys.size();
         for(city c : adjCitys) {
             int newDistance = d[newCity] + c.w;
             if(newDistance < d[c.v]) { //这里不判断是否访问过
@@ -126,15 +127,20 @@ void p1003() {
 }
 
 void addEdge(vector<city>* adj, int start, int end, int w) {
-    vector<city> v = adj[start];
+    // error!!!对副本操作没有任何意义
+    // vector<city> v = adj[start]; //值传递，不是引用传递！
+    // city c1;
+    // c1.v = end;
+    // c1.w = w;
+    // v.push_back(c1);
+
     city c1;
     c1.v = end;
-    c1.w = w;
-    v.push_back(c1);
+    c1.w = w; 
+    adj[start].push_back(c1);
 
-    vector<city> v1 = adj[end];
     city c2;
     c2.v = start;
     c2.w = w;
-    v1.push_back(c2);
+    adj[end].push_back(c2);
 }
