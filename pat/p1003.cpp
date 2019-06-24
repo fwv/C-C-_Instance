@@ -95,8 +95,10 @@ void p1003() {
         }
     }
 
+    //重置状态
     for(int i = 0; i < cityNUm; i++) {
         visited[i] = false;
+        maxScyNum[i] = -1;
     }
     //计算最大搜救队集结数量（思路：djiskal单源扫描，以城市搜救队数量为权重，取大）
     maxScyNum[startCity] = scyNum[startCity];
@@ -112,29 +114,23 @@ void p1003() {
                 c = i;
             }
         }
-        //更新新节点的距离信息
+        //更新新节点的集结数信息
         vector<city> citys = adj[c];
         for(city adj_c : citys) {
-            if(scyNum[adj_c.v] + maxScyNum[c] > maxScyNum[adj_c.v]) {
+            if(!visited[c] && scyNum[adj_c.v] + maxScyNum[c] > maxScyNum[adj_c.v]) {
                  maxScyNum[adj_c.v] = scyNum[adj_c.v] + maxScyNum[c];
             } 
         }
         visited[c] = true;
     }
     int toEndMaxScyNum = maxScyNum[endCity];
-    cout << minDisCnt+" "+toEndMaxScyNum << endl;
+    // cout << minDisCnt+" "+toEndMaxScyNum << endl; //不理解为什么输出奇怪的字符
+    std::printf("%d %d", minDisCnt, toEndMaxScyNum);
 }
 
 void addEdge(vector<city>* adj, int start, int end, int w) {
-    vector<city> v = adj[start];
-    city c1;
-    c1.v = end;
-    c1.w = w;
-    v.push_back(c1);
-
-    vector<city> v1 = adj[end];
-    city c2;
-    c2.v = start;
-    c2.w = w;
-    v1.push_back(c2);
+    city c;
+    c.v = end;
+    c.w = w;
+    adj[start].push_back(c);
 }
