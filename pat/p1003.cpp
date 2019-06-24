@@ -43,7 +43,7 @@ void p1003() {
             v.push_back(c);
             adj[i] = v;
             visited[i] = false; //初始化访问数组
-    }
+    } 
 
     for(int i = 0; i < cityNUm; i++) {
         scanf("%d", &scyNum[i]);
@@ -69,6 +69,7 @@ void p1003() {
         }
         //更新邻节点距离
         vector<city> adjCitys = adj[newCity];
+        int size = adjCitys.size();
         for(city c : adjCitys) {
             int newDistance = d[newCity] + c.w;
             if(newDistance < d[c.v]) { //这里不判断是否访问过
