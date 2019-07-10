@@ -12,7 +12,8 @@ class city{
 };
 
 void addEdge(vector<city>* adj, int start, int end, int w);
-
+void showAdj(vector<city>* adj, int len);
+    
 void p1003() {
     vector<city>* adj;
     int cityNUm;
@@ -101,6 +102,7 @@ void p1003() {
         visited[i] = false;
         maxScyNum[i] = -1;
     }
+
     //计算最大搜救队集结数量（思路：djiskal单源扫描，以城市搜救队数量为权重，取大）
     maxScyNum[startCity] = scyNum[startCity];
     //循环n次 prim构建MST
@@ -110,7 +112,7 @@ void p1003() {
         int maxScyCnt = 0;
         for (int i = 0; i < cityNUm; i++)
         {
-            if(!visited[i] && scyNum[i] > maxScyCnt) {
+            if(!visited[i] && maxScyNum[i] > maxScyCnt) {
                 maxScyCnt = scyNum[i];
                 c = i;
             }
@@ -118,7 +120,7 @@ void p1003() {
         //更新新节点的集结数信息
         vector<city> citys = adj[c];
         for(city adj_c : citys) {
-            if(!visited[c] && scyNum[adj_c.v] + maxScyNum[c] > maxScyNum[adj_c.v]) {
+            if(adj_c.v != c && scyNum[adj_c.v] + maxScyNum[c] > maxScyNum[adj_c.v]) {
                  maxScyNum[adj_c.v] = scyNum[adj_c.v] + maxScyNum[c];
             } 
         }
@@ -134,4 +136,17 @@ void addEdge(vector<city>* adj, int start, int end, int w) {
     c.v = end;
     c.w = w;
     adj[start].push_back(c);
+}
+
+void showAdj(vector<city>* adj, int len) {
+    int i = 0;
+    while(i < len) {
+         vector<city> citys = adj[i];
+         cout<< " line " << i <<":";
+         for(city c : citys) {
+               cout<< c.v << " "; 
+         }
+         cout<< endl;
+         i++;   
+    }
 }
