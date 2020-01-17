@@ -38,7 +38,6 @@ int main()
     //     cout << word << " ";
     // }
     // cout << endl;
-    p1003();
     system("PAUSE");
 }
 
@@ -52,3 +51,5 @@ void show(vector<string>* adj) {
     adj[1].push_back("sss");
     adj[2].push_back("i am 333333333!");
 }
+
+ 
