@@ -4,6 +4,7 @@ void comma_expression();
 void ifcondition();
 void scanf_width();
 void switch_case();
+void do_while_instance();
 
 void sample_instance()
 {
@@ -11,7 +12,7 @@ void sample_instance()
     // ifcondition();
     // scanf_width();
     // switch_case();
-    printf("%c\n", 3);
+    do_while_instance();
 }
 
 void comma_expression()
@@ -58,4 +59,24 @@ void switch_case() //input: H output:all  reason:miss break;1)search case 2)brea
     default:
         printf("Bye_Bye!\n");
     }
+}
+
+void do_while_instance()
+{
+    int x = -1;
+    do
+    {
+        printf("run it! [do while]\n"); // do while will run onece 
+    } while (!x);
+
+    if(!x) {
+        printf("run it! [if]\n");
+    }
+
+    int y = 1;
+    do{
+        printf("run!\n");
+    }while(y=3); // assignment statement return 3, true forever! rather comparative statement
+
+    printf("%d\n", y=2); // return 2
 }
