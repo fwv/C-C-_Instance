@@ -3,12 +3,15 @@ void sample_isntance();
 void comma_expression();
 void ifcondition();
 void scanf_width();
+void switch_case();
 
 void sample_instance()
 {
     // comma_expression();
     // ifcondition();
-    scanf_width();
+    // scanf_width();
+    // switch_case();
+    printf("%c\n", 3);
 }
 
 void comma_expression()
@@ -40,5 +43,19 @@ void scanf_width()
     int i, j;
     scanf("%3d%2d", &i, &j);
     printf("i=%d,j=%d\n", i, j); // input:1234567 output:123 45
-    
+}
+
+void switch_case() //input: H output:all  reason:miss break;1)search case 2)break 3)no match case thus go to default
+{
+    char ch;
+    ch = getchar();
+    switch (ch)
+    {
+    case 'H':
+        printf("Hello!\n");
+    case 'G':
+        printf("Good morning!\n");
+    default:
+        printf("Bye_Bye!\n");
+    }
 }
