@@ -6,7 +6,7 @@ void scanf_width();
 void switch_case();
 void do_while_instance();
 void for_instance();
-
+void str_instance();
 
 void sample_instance()
 {
@@ -15,7 +15,8 @@ void sample_instance()
     // scanf_width();
     // switch_case();
     // do_while_instance();
-    for_instance();
+    // for_instance();
+    str_instance();
 }
 
 void comma_expression()
@@ -92,4 +93,34 @@ void for_instance()
     {
         printf("i=%2d, j=%2d\n", i, j);
     }
+}
+
+void str_instance()
+{
+    char str[10] = "hello"; // '\0' is space
+    printf("4th is =%cend\n", str[4]);
+    printf("5th is =%cend\n", str[5]);
+    printf("9th is =%cend\n", str[9]);
+    printf("10th is =%cend\n", str[10]);
+    char e = '\0';
+    printf("end is =%cend\n", e);
+
+    char s1[5];
+    // scanf("%s",s1);
+    // printf("%s\n", s1);
+
+    printf("%s\n", s1);
+    for (int i = 0; i < 5; i++)
+    {
+        printf("%3c", s1[i]);
+    }
+    printf("\n");
+    scanf("%c", s1);
+    printf("%s\n", s1);
+    for (int i = 0; i < 5; i++)
+    {
+        printf("%3c", s1[i]);
+    }
+    printf("\n");
+
 }
