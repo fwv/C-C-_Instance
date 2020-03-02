@@ -5,6 +5,8 @@ void ifcondition();
 void scanf_width();
 void switch_case();
 void do_while_instance();
+void for_instance();
+
 
 void sample_instance()
 {
@@ -12,7 +14,8 @@ void sample_instance()
     // ifcondition();
     // scanf_width();
     // switch_case();
-    do_while_instance();
+    // do_while_instance();
+    for_instance();
 }
 
 void comma_expression()
@@ -66,17 +69,27 @@ void do_while_instance()
     int x = -1;
     do
     {
-        printf("run it! [do while]\n"); // do while will run onece 
+        printf("run it! [do while]\n"); // do while will run onece
     } while (!x);
 
-    if(!x) {
+    if (!x)
+    {
         printf("run it! [if]\n");
     }
 
     int y = 1;
-    do{
+    do
+    {
         printf("run!\n");
-    }while(y=3); // assignment statement return 3, true forever! rather comparative statement
+    } while (y = 3); // assignment statement return 3, true forever! rather comparative statement
 
-    printf("%d\n", y=2); // return 2
+    printf("%d\n", y = 2); // return 2
+}
+
+void for_instance()
+{
+    for (int i = 0, j = 0; i < 5; ++i, j++) // expression3 below for statement
+    {
+        printf("i=%2d, j=%2d\n", i, j);
+    }
 }
