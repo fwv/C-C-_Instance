@@ -124,3 +124,12 @@ void str_instance()
     printf("\n");
 
 }
+
+void array_instance() {
+    int a[][3] = {1,2,3,4,5,6}; // correct
+    //int a[2][] = {1,2,3,4,5,6}; // wrong:an array may not have elements of this type
+    //int a[2][] = {{1,2,3},{4,5,6}}; // wrong: an array may not have elements of this type
+
+
+}    
+    
