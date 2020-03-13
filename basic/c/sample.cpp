@@ -7,6 +7,7 @@ void switch_case();
 void do_while_instance();
 void for_instance();
 void str_instance();
+void array_instance();
 
 void sample_instance()
 {
@@ -16,7 +17,8 @@ void sample_instance()
     // switch_case();
     // do_while_instance();
     // for_instance();
-    str_instance();
+    // str_instance();
+    array_instance();
 }
 
 void comma_expression()
@@ -70,6 +72,7 @@ void do_while_instance()
     int x = -1;
     do
     {
+        
         printf("run it! [do while]\n"); // do while will run onece
     } while (!x);
 
@@ -122,14 +125,52 @@ void str_instance()
         printf("%3c", s1[i]);
     }
     printf("\n");
-
 }
 
-void array_instance() {
-    int a[][3] = {1,2,3,4,5,6}; // correct
+void array_instance()
+{
+    int a[][3] = {1, 2, 3, 4, 5, 6}; // correct, maybe segment fault
     //int a[2][] = {1,2,3,4,5,6}; // wrong:an array may not have elements of this type
     //int a[2][] = {{1,2,3},{4,5,6}}; // wrong: an array may not have elements of this type
 
+    // output:
+    // 1  2  0  0
+    // 1  2  3  0
+    // 0  0  0  0
+    // -13642300832767-1456960000512139378
+    // one {} one initialization. a[][3] doesn't initialize.
+    int b[][4] = {
+                   {1, 2,},
+                   {1, 2, 3},
+                   {},
+                  };
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            printf("%3d", b[i][j]);
+        }
+        printf("\n");
+    }
 
-}    
+    // int c[100] = 0; //wrong
+    int c[] = {0};
+    printf("size of c is: %ld\n", sizeof(c));
+        for (int j = 0; j < 40; j++)
+        {
+            printf("%3d", c[j]);
+        }
     
+    int d[100] = {0};
+    int e[100][100] = {0};
+    char f[100][1000][1000] = {'c'};
+
+    char s[] = "hello";
+    // s = "hello"; //wrong
+    char s1[] = {"hello"};
+    int g[] = {'a', 'b'};
+
+    int h[10];
+    printf("size of h is: %ld\n", sizeof(h));
+
+}
