@@ -1,5 +1,6 @@
 #include<vector>
-#include"lt.cpp"
+#include<algorithm>
+
 using namespace std;
 
 // 核心：回溯
@@ -22,7 +23,7 @@ using namespace std;
 // 来源：力扣（LeetCode）
 // 链接：https://leetcode-cn.com/problems/permutations
 
-class lt46 : public lt{
+class lt47 : public lt{
 public:
     int n;
     int temp[50];
@@ -34,6 +35,8 @@ public:
        for (int i = 0; i <= n-1; i++) {
            hashlist[i] = true;
        }
+       //sort,必须先排序才能剪枝
+       sort(nums.begin(), nums.end());
        generate(1, nums);
        return rlt;
     }
@@ -50,6 +53,12 @@ public:
       }
       for(int i = 0; i <= n-1; i++) {
          if (hashlist[i]) {
+             //剪枝以去重
+             if (i!= 0 && nums[i-1] == nums[i] && hashlist[i-1])// 剪枝条件：1.此时选中的nums不是开头第一个（因为开头第一个必然不会重复） 2.此时选中的num和同层级上一个选中的nums相同 3.上一个选中的nums还没有被使用，所以才会与本次选中nums产生等效效应
+             {
+                 continue;
+             }
+             
             temp[index] = nums[i];
             hashlist[i] = false;
             generate(index+1, nums);
@@ -60,9 +69,9 @@ public:
 
    void run() override{
       vector<int> v;
-      v.push_back(-2);
-      v.push_back(-1);
-      v.push_back(0);
+      v.push_back(2);
+      v.push_back(1);
+      v.push_back(1);
       permute(v);
    }
 };
