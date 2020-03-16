@@ -1,6 +1,9 @@
 #include<vector>
 #include<algorithm>
+#ifndef _BASESMOOTHINGALGORITHM_H_
+#define _BASESMOOTHINGALGORITHM_H_
 #include"lt.cpp"
+#endif
 
 using namespace std;
 

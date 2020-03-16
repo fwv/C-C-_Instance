@@ -1,5 +1,8 @@
 #include<vector>
+#ifndef _BASESMOOTHINGALGORITHM_H_
+#define _BASESMOOTHINGALGORITHM_H_
 #include"lt.cpp"
+#endif
 using namespace std;
 
 // 核心：回溯

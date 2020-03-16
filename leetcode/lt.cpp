@@ -1,15 +1,8 @@
 class lt
 {
 public:
-    lt(/* args */);
-    ~lt();
-    virtual void run() = 0;
+    lt(/* args */)=default;
+    ~lt()=default;
+    virtual void run(){};
 };
 
-lt::lt(/* args */)
-{
-}
-
-lt::~lt()
-{
-}
