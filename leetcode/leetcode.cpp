@@ -15,7 +15,7 @@ using namespace std;
 void leetcode_instance();
 
 void leetcode_instance() {
-  lt s = lt60();
+  lt60 s = lt60();
   s.run();
   cout<<"over"<<endl;
 }
