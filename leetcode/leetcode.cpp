@@ -9,13 +9,19 @@
 #include"lt46.cpp"
 #include"lt47.cpp"
 #include"lt60.cpp"
+#include"lt206.cpp"
+
 
 
 using namespace std;
 void leetcode_instance();
 
 void leetcode_instance() {
-  lt60 s = lt60();
-  s.run();
+
+  lt* lt = new lt206();
+  lt->run();
+
+  cout << endl;
   cout<<"over"<<endl;
+  
 }

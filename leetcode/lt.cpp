@@ -5,8 +5,6 @@ class lt
 public:
     lt(/* args */)=default;
     ~lt()=default;
-    virtual void run(){
-        cout<<"lt::run()"<<endl;
-    };
+    virtual void run()=0;
 };
 
