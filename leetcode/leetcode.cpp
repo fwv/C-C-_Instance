@@ -10,6 +10,8 @@
 #include"lt47.cpp"
 #include"lt60.cpp"
 #include"lt206.cpp"
+#include"lt148.cpp"
+
 
 
 
@@ -18,7 +20,7 @@ void leetcode_instance();
 
 void leetcode_instance() {
 
-  lt* lt = new lt206();
+  lt* lt = new lt148();
   lt->run();
 
   cout << endl;
