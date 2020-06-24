@@ -7,7 +7,7 @@ using namespace std;
 Structure:variable-length array
 Pattern:train
 Connection:List in Java
------vector----- 
+-----vector-----    
 */
 void vector_instance() {
 

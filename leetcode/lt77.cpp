@@ -3,8 +3,8 @@
 #include<algorithm>
 #include<sstream>
 
-#ifndef _BASESMOOTHINGALGORITHM_H_
-#define _BASESMOOTHINGALGORITHM_H_
+#ifndef LT_H
+#define LT_H
 #include"lt.cpp"
 #endif
 

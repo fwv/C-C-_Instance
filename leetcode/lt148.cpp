@@ -1,8 +1,11 @@
-#include"ds/ListNode.cpp"
-
-#ifndef _BASESMOOTHINGALGORITHM_H_
-#define _BASESMOOTHINGALGORITHM_H_
+#ifndef LT_H
+#define LT_H
 #include "lt.cpp"
+#endif
+
+#ifndef LISTNODE_H
+#define LISTNODE_H
+#include"ds/ListNode.cpp"
 #endif
 
 using namespace std;

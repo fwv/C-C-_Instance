@@ -1,14 +1,14 @@
 #include <iostream>
 #include <algorithm>
 
-#ifndef _BASESMOOTHINGALGORITHM_H_
-#define _BASESMOOTHINGALGORITHM_H_
+#ifndef LT_H
+#define LT_H
 #include "lt.cpp"
 #endif
 
 using namespace std;
 
-class lt_temp : lt
+class lt_temp : public lt
 {
     public:
     

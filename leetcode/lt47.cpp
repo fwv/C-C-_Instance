@@ -1,12 +1,12 @@
 #include<vector>
 #include<algorithm>
-#ifndef _BASESMOOTHINGALGORITHM_H_
-#define _BASESMOOTHINGALGORITHM_H_
+#ifndef LT_H
+#define LT_H
 #include"lt.cpp"
 #endif
 
 using namespace std;
-
+  
 // 核心：回溯
 // 47.PermutationsII
 // Given a collection of distinct integers, return all possible permutations.

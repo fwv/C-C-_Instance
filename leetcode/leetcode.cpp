@@ -1,11 +1,12 @@
 #include<iostream>
 #include<vector>
 
-#ifndef _BASESMOOTHINGALGORITHM_H_
-#define _BASESMOOTHINGALGORITHM_H_
+#ifndef LT_H
+#define LT_H
 #include"lt.cpp"
 #endif
 
+#include"lt2.cpp"
 #include"lt46.cpp"
 #include"lt47.cpp"
 #include"lt60.cpp"
@@ -20,7 +21,7 @@ void leetcode_instance();
 
 void leetcode_instance() {
 
-  lt* lt = new lt148();
+  lt* lt = new lt2();
   lt->run();
 
   cout << endl;
