@@ -8,6 +8,7 @@
 
 #include"lt2.cpp"
 #include"lt3.cpp"
+#include"lt4.cpp"
 #include"lt46.cpp"
 #include"lt47.cpp"
 #include"lt60.cpp"
@@ -22,7 +23,7 @@ void leetcode_instance();
 
 void leetcode_instance() {
 
-  lt* lt = new lt3();
+  lt* lt = new lt4();
   lt->run();
 
   cout << endl;

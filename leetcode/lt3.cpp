@@ -26,7 +26,7 @@ public:
     unordered_set<char> hashset;
     int lengthOfLongestSubstring(string s)
     {
-       // 采用滑动窗口思维解题 O(n)
+       // 采用滑动窗口思维解题 O(n) 右边指针不会折返
         int n = s.size();
         for (int i = 0; i < n; i++)
         {   
