@@ -17,8 +17,13 @@ public:
     {
         long begin, end;
         begin = getTimeUsec();
-        // code
+
+        /** test code begin **/
+        
+         /** test code end **/
+
         end = getTimeUsec();
+
         cout << "程序耗时：" << (end - begin) / 1000 << "ms" << endl;
     }
 
