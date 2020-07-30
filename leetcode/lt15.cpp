@@ -20,6 +20,11 @@ public:
         vector<vector<int>> rlt;
         for (int first = 0; first < len - 2; first++)
         {
+            if (first > 0 && nums[first - 1] == nums[first])
+            {
+                continue;
+            }
+
             int target = -nums[first];
             int third = len - 1; //精髓所在 第三指针不回头 确保时杂O(n)
             for (int second = first + 1; second < len - 1; second++)
@@ -30,7 +35,7 @@ public:
                     {
                         third--;
                     }
-                    if (target == nums[second] + nums[third])
+                    if (target == nums[second] + nums[third] && second != third)
                     {
                         vector<int> temp;
                         temp.push_back(nums[first]);
