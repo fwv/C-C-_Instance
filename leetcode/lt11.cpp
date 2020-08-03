@@ -21,7 +21,8 @@ public:
         {
             int w = min(height[l], height[h]) * (h - l);
             maxW = w > maxW ? w : maxW;
-            if (height[l] <= height[h])
+            //双指针法 小的一方先动
+            if (height[l] <= height[h]) 
             {
                 l++;
             }

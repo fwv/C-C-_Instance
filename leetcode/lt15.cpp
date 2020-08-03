@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class lt_temp : public lt
+class lt15 : public lt
 {
 public:
     vector<vector<int>> threeSum(vector<int> &nums)
