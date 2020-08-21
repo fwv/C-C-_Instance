@@ -34,7 +34,8 @@ public:
                 l2 = l2->next;
             }
             tail = tail->next;
-        }
+            tail->next = NULL;
+        }  
         if (NULL != l1)
         {
             tail->next = l1;
@@ -52,7 +53,20 @@ public:
         begin = getTimeUsec();
 
         /** test code begin **/
+        ListNode *l1 = new ListNode(1);
+        ListNode *l2 = new ListNode(3);
+        ListNode *l3 = new ListNode(5);
+        ListNode *l4 = new ListNode(7);
+        l1->next = l2;
+        l2->next = l3;
+        l3->next = l4;
 
+        ListNode *r1 = new ListNode(2);
+        ListNode *r2 = new ListNode(4);
+        ListNode *r3 = new ListNode(6);
+        r1->next = r2;
+        r2->next = r3;
+        ListNode *rlt = mergeTwoLists(l1, r1);
         /** test code end **/
 
         end = getTimeUsec();

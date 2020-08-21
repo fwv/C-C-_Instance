@@ -24,9 +24,10 @@ public:
                 stack.push(c);
             }
             else if (c == '}')
-            {   
-                if (stack.empty())return false;
-                
+            {
+                if (stack.empty())
+                    return false;
+
                 char top = stack.top();
                 if (top != '{')
                 {
@@ -39,6 +40,9 @@ public:
             }
             else if (c == ']')
             {
+                if (stack.empty())
+                    return false;
+
                 char top = stack.top();
                 if (top != '[')
                 {
@@ -51,6 +55,9 @@ public:
             }
             else if (c == ')')
             {
+                if (stack.empty())
+                    return false;
+
                 char top = stack.top();
                 if (top != '(')
                 {
@@ -65,7 +72,8 @@ public:
         if (stack.empty())
         {
             return true;
-        }else
+        }
+        else
         {
             return false;
         }
