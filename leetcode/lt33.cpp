@@ -21,7 +21,7 @@ public:
         if (1 == len)
             return target == nums[0] ? 0 : -1;
         int l = 0, r = len - 1;
-        while (l < r)
+        while (l <= r)
         {
             int mid = (l + r) >> 1;
             if (nums[mid] == target)
@@ -39,7 +39,7 @@ public:
                     l = mid + 1;
                 }
             }
-            else if (nums[mid] < nums[len-1])
+            else if (nums[mid] <= nums[len-1])
             {
                 if (target <= nums[len - 1] && nums[mid] < target)
                 {

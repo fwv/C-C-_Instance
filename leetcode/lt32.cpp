@@ -15,8 +15,8 @@ public:
     int longestValidParentheses(string s)
     {
         int len = s.size();
-        if (len == 0)
-            return 0;
+        if (len == 0)return 0;
+
         int dp[len];
         fill(dp, dp + len, 0);
         int maxLen = 0;
@@ -31,12 +31,12 @@ public:
             {
                 if (s[i - 1] == '(')
                 {
-                    dp[i] = (i > 2 ? dp[i - 2] : 0) + 2;
+                    dp[i] = (i >= 2 ? dp[i - 2] : 0) + 2;
                     maxLen = dp[i] > maxLen ? dp[i] : maxLen;
                 }
                 else if (s[i - 1] == ')')
                 {   
-                    int matchIndex = s[i - 1 - dp[i - 1]];
+                    int matchIndex = i - 1 - dp[i - 1];
                     if (matchIndex>=0 && s[matchIndex] == '(')
                     {
                         dp[i] = (matchIndex - 1 >= 0 ? dp[matchIndex - 1] : 0) + dp[i - 1] + 2;
