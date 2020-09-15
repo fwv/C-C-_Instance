@@ -16,6 +16,7 @@
 #include"lt31.cpp"
 #include"lt32.cpp"
 #include"lt34.cpp"
+#include"lt39.cpp"
 #include"lt46.cpp"
 #include"lt47.cpp"
 #include"lt60.cpp"
@@ -30,7 +31,7 @@ void leetcode_instance();
 
 void leetcode_instance() {
 
-  lt* lt = new lt34();
+  lt* lt = new lt39();
   lt->run();
 
   cout << endl;
