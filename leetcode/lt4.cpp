@@ -30,7 +30,38 @@ using namespace std;
 class lt4 : public lt
 {
 public:
-    double findMedianSortedArrays(vector<int> &nums1, vector<int> &nums2)
+
+     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+        int totalLength = nums1.size() + nums2.size();
+        if (totalLength % 2 == 1) {
+            return getKthE(nums1, nums2, 0, 0, (totalLength + 1) / 2);
+        }
+        else {
+           return (getKthE(nums1, nums2, 0, 0, totalLength / 2) + getKthE(nums1, nums2, 0, 0,totalLength / 2 + 1)) / 2.0;
+        }
+    }
+
+    int getKthE(vector<int>& n1, vector<int>& n2, int index1, int index2, int k) {
+        int len1 = n1.size();
+        int len2 = n2.size();
+        if(index1 >= len1)return n2[index2 + k -1];
+        if(index2 >= len2)return n1[index1 + k -1];
+        if(1==k)return min(n1[index1], n2[index2]);
+
+        int newIndex1 = min(len1-1, index1+k/2-1);
+        int newIndex2 = min(len2-1, index2+k/2-1);
+        int newk = k;
+        if(n1[newIndex1] <= n2[newIndex2]) {
+            newk -= newIndex1-index1+1;
+            index1 = newIndex1+1;
+        } else {
+            newk = k - newIndex2-index2+1;
+            index2 = newIndex2+1;
+        }
+        return getKthE(n1, n2, index1, index2, newk);
+    }
+
+    double findMedianSortedArrays1(vector<int> &nums1, vector<int> &nums2)
     {
         int m = nums1.size();
         int n = nums2.size();
@@ -197,19 +228,21 @@ public:
     void run() override
     {
         vector<int> v1;
-        v1.push_back(4);
+        v1.push_back(1);
+        v1.push_back(3);
         // v1.push_back(2);
         // v1.push_back(5);
         // v1.push_back(6);
 
         vector<int> v2;
-        v2.push_back(1);
         v2.push_back(2);
-        v2.push_back(3);
-        // v2.push_back(4);
-        v2.push_back(5);
-        v2.push_back(6);
         v2.push_back(7);
+        // v2.push_back(2);
+        // v2.push_back(3);
+        // // v2.push_back(4);
+        // v2.push_back(5);
+        // v2.push_back(6);
+        // v2.push_back(7);
         // v2.push_back(8);
 
         double rlt = findMedianSortedArrays(v1, v2);
