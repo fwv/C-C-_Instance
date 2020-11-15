@@ -37,7 +37,7 @@ void leetcode_instance();
 
 void leetcode_instance() {
 
-  lt* lt = new lt130();
+  lt* lt = new lt4();
   lt->run();
 
   cout << endl;
