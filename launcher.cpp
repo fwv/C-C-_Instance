@@ -7,8 +7,11 @@ using namespace std;
 
 int main()
 {   
-    leetcode_instance();
+    // leetcode_instance();
+    sort_instance();
     system("PAUSE");
 }
+
+
 
 
