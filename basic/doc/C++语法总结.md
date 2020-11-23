@@ -213,4 +213,21 @@
 
 ## 内存管理操作符
 
+# 模板与标准模板库
 
+## 基础点
+* 基本语法格式
+  ``` 
+  Template<class T>
+  T func(T a, T b){...}
+
+  Template<class T>
+  class templateName{...};
+  ```
+* ```Template<class T>```这句话要写在每一个用到的开头（类申明开头、方法定义开头）分别对应类模板和函数模板，使用时就用```class_template_name<template_param> c;```方式来使用
+* 函数模板实例化函数，函数模板也能够重载
+* 类模板方法定义（类外方式）```ret_type template_name<template_param>::func(...){...}```
+* 类模板参数中必须有一个类参数，也可以有0个或者多个函数类型参数
+* 对于类模板A来说，A并不是一个类，```A<int>```和```A<double>```才是类，他们分别持有各自的静态变量
+* 类模板可以像普通类一样拥有继承的特性，子类继承父类的类模板参数并扩展参数表
+  
